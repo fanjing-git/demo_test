@@ -1,0 +1,12 @@
+{
+    "Python File Header": {
+        "prefix": "pyheader",
+        "body": [
+            "# encoding: utf-8",
+            "# @File  : ${TM_FILENAME}",
+            "# @Author: Fan Jing",
+            "# @Date  : $CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE/$CURRENT_HOUR:$CURRENT_MINUTE"
+        ],
+        "description": "Insert Python file header with encoding, filename, author, and date"
+    }
+}
