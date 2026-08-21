@@ -14,6 +14,6 @@ class LoginPage(BasePage):
     @allure.step("执行登录：用户名={username}, 密码={password}")
     def login(self, username, password):
         self.open_browser(LOGIN_URL)
-        self.input_text(LoginLocator.username_input, username)
-        self.input_text(LoginLocator.password_input, password)
-        self.click_element(LoginLocator.login_button)
+        self.input_text(LoginLocator.USERNAM_INOUT, username)
+        self.input_text(LoginLocator.PASSWORD_INOUT, password)
+        self.click_element(LoginLocator.LOGIN_BUTTON)

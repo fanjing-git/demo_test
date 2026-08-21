@@ -1,0 +1,28 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: E
+    - heading "EduScore" [level=1] [ref=e7]
+    - paragraph [ref=e8]: AI 学生成绩管理系统 · 前后端分离版
+  - generic [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]: 账号
+      - textbox "admin / teacher01" [ref=e12]
+    - generic [ref=e13]:
+      - generic [ref=e14]: 密码
+      - textbox "admin123" [ref=e15]
+    - generic [ref=e16]:
+      - generic [ref=e17] [cursor=pointer]:
+        - checkbox "记住密码" [ref=e18]
+        - text: 记住密码
+      - link "忘记密码？" [ref=e19] [cursor=pointer]:
+        - /url: javascript:void(0)
+    - button "登 录" [ref=e20] [cursor=pointer]
+  - generic [ref=e21]:
+    - paragraph [ref=e22]: 演示账号
+    - list [ref=e23]:
+      - listitem [ref=e24]:
+        - strong [ref=e25]: admin
+        - text: / admin123 — 管理员
+      - listitem [ref=e26]:
+        - strong [ref=e27]: teacher01
+        - text: / teacher123 — 教师

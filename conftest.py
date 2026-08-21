@@ -3,6 +3,7 @@
 # @Author: Fan Jing
 # @Date  : 2026/08/13/16:23
 
+import sys
 import time
 import allure
 import os
@@ -10,7 +11,9 @@ import pytest
 from playwright.sync_api import sync_playwright
 from loguru import logger
 from pages.login.login_page import LoginPage
-from config.env_config import LOGIN_URL, LOGIN_USERNAME, LOGIN_PASSWORD
+from pages.first_home.home_page import HomePage
+from config.env_config import LOGIN_USERNAME, LOGIN_PASSWORD
+
 
 # ==================== 页面级别 fixture（支持多浏览器） ====================
 BROWSER_DEBUG = os.getenv("PW_BROWSER", "chromium")
@@ -126,7 +129,9 @@ def pytest_runtest_makereport(item, call):
 def logged_in_page(page):
     """登录成功的 page，供后续所有用例使用"""
     login_page = LoginPage(page)
-    login_page.login(LOGIN_URL, LOGIN_USERNAME, LOGIN_PASSWORD, LOGIN_SECURITY_CODE)
-    assert "login.html" not in page.url
+    home_page = HomePage(page)
+    login_page.login(LOGIN_USERNAME, LOGIN_PASSWORD)
+    logout_button = home_page.first_home()
+    login_page.assert_text(logout_button, "退出登录")
     yield page
     logger.info("登录fixture teardown完成，测试结束")

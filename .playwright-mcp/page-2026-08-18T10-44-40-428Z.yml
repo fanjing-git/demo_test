@@ -1,0 +1,340 @@
+- generic [ref=e28]:
+  - complementary [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]: E
+      - generic [ref=e32]: EduScore
+    - navigation [ref=e33]:
+      - link "📊 工作台" [ref=e34] [cursor=pointer]:
+        - /url: /dashboard
+        - generic [ref=e35]: 📊
+        - generic [ref=e36]: 工作台
+      - link "🌴 请假申请" [ref=e37] [cursor=pointer]:
+        - /url: /leave
+        - generic [ref=e38]: 🌴
+        - generic [ref=e39]: 请假申请
+      - link "📢 校园公告" [ref=e40] [cursor=pointer]:
+        - /url: /announcements
+        - generic [ref=e41]: 📢
+        - generic [ref=e42]: 校园公告
+      - link "🔍 操作审计" [ref=e43] [cursor=pointer]:
+        - /url: /audit
+        - generic [ref=e44]: 🔍
+        - generic [ref=e45]: 操作审计
+      - link "📚 学科管理" [ref=e46] [cursor=pointer]:
+        - /url: /subjects
+        - generic [ref=e47]: 📚
+        - generic [ref=e48]: 学科管理
+      - link "👨‍🎓 学生管理" [ref=e49] [cursor=pointer]:
+        - /url: /students
+        - generic [ref=e50]: 👨‍🎓
+        - generic [ref=e51]: 学生管理
+      - link "🏫 班级管理" [ref=e52] [cursor=pointer]:
+        - /url: /classes
+        - generic [ref=e53]: 🏫
+        - generic [ref=e54]: 班级管理
+      - link "📋 考试管理" [ref=e55] [cursor=pointer]:
+        - /url: /exams
+        - generic [ref=e56]: 📋
+        - generic [ref=e57]: 考试管理
+      - link "📝 成绩管理" [ref=e58] [cursor=pointer]:
+        - /url: /scores
+        - generic [ref=e59]: 📝
+        - generic [ref=e60]: 成绩管理
+      - link "🔬 考试分析" [ref=e61] [cursor=pointer]:
+        - /url: /analysis/exam
+        - generic [ref=e62]: 🔬
+        - generic [ref=e63]: 考试分析
+      - link "⏰ 考勤管理" [ref=e64] [cursor=pointer]:
+        - /url: /attendance
+        - generic [ref=e65]: ⏰
+        - generic [ref=e66]: 考勤管理
+      - link "📈 考勤统计" [ref=e67] [cursor=pointer]:
+        - /url: /attendance/stats
+        - generic [ref=e68]: 📈
+        - generic [ref=e69]: 考勤统计
+      - link "📤 导入导出" [ref=e70] [cursor=pointer]:
+        - /url: /upload-download
+        - generic [ref=e71]: 📤
+        - generic [ref=e72]: 导入导出
+    - generic [ref=e73]:
+      - generic "点击更换头像" [ref=e74] [cursor=pointer]: 系
+      - generic [ref=e76]: 系统管理员
+      - generic [ref=e77]: 系统管理员
+      - button "退出登录" [ref=e78] [cursor=pointer]
+  - main [ref=e79]:
+    - generic [ref=e153]:
+      - generic [ref=e154]:
+        - generic [ref=e155]:
+          - heading "请假申请" [level=2] [ref=e156]
+          - paragraph [ref=e157]: 提交新的请假申请，或查看历史记录
+        - button "+ 新建请假" [active] [ref=e158] [cursor=pointer]
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - combobox [ref=e161]:
+            - option "全部状态" [selected]
+            - option "待审批"
+            - option "已通过"
+            - option "已拒绝"
+            - option "已撤回"
+          - button "刷新" [ref=e162] [cursor=pointer]
+        - table [ref=e163]:
+          - rowgroup [ref=e164]:
+            - row [ref=e165]:
+              - columnheader "申请人" [ref=e166]
+              - columnheader "班级" [ref=e167]
+              - columnheader "类型" [ref=e168]
+              - columnheader "起止日期" [ref=e169]
+              - columnheader "原因" [ref=e170]
+              - columnheader "状态" [ref=e171]
+              - columnheader "审批人" [ref=e172]
+              - columnheader "操作" [ref=e173]
+          - rowgroup [ref=e174]:
+            - row [ref=e175]:
+              - cell "张三 2024001" [ref=e176]: 张三2024001
+              - cell "高三1班" [ref=e177]
+              - cell "事假" [ref=e178]
+              - cell "2026-08-18 → 2026-08-18" [ref=e180]
+              - cell "ddd" [ref=e181]
+              - cell "已通过" [ref=e182]
+              - cell "系统管理员" [ref=e184]
+              - cell [ref=e186]:
+                - button "撤回" [ref=e187] [cursor=pointer]
+            - row [ref=e188]:
+              - cell "测试改名 S001" [ref=e189]: 测试改名S001
+              - cell "高三1班" [ref=e190]
+              - cell "事假" [ref=e191]
+              - cell "2026-08-20 → 2026-08-21" [ref=e193]
+              - cell "测试调试" [ref=e194]
+              - cell "已拒绝" [ref=e195]
+              - cell "系统管理员" [ref=e197]
+              - cell [ref=e199]:
+                - button "撤回" [ref=e200] [cursor=pointer]
+            - row [ref=e201]:
+              - cell "测试改名 S001" [ref=e202]: 测试改名S001
+              - cell "高三1班" [ref=e203]
+              - cell "事假" [ref=e204]
+              - cell "2026-08-14 → 2026-08-15" [ref=e206]
+              - cell "测试请假" [ref=e207]
+              - cell "待审批" [ref=e208]
+              - cell "-" [ref=e210]
+              - cell [ref=e212]:
+                - button "通过" [ref=e213] [cursor=pointer]
+                - button "拒绝" [ref=e214] [cursor=pointer]
+                - button "撤回" [ref=e215] [cursor=pointer]
+      - generic [ref=e217]:
+        - heading "新建请假申请" [level=3] [ref=e218]
+        - generic [ref=e219]:
+          - generic [ref=e220]:
+            - generic [ref=e221]: 学生
+            - combobox [ref=e222]:
+              - option "请选择学生" [disabled] [selected]
+              - option "测试学生（ · 高三1班）"
+              - option "张三（2024001 · 高三1班）"
+              - option "张三（20241783515422 · 高三1班）"
+              - option "张三（20241783515743 · 高三1班）"
+              - option "张三（20241783515886 · 高三1班）"
+              - option "张三（20241783515967 · 高三1班）"
+              - option "张三（20241783515993 · 高三1班）"
+              - option "张三（20241783516129 · 高三1班）"
+              - option "张三（20241783516167 · 高三1班）"
+              - option "张三（20241783516198 · 高三1班）"
+              - option "张三（20241783516619 · 高三1班）"
+              - option "张三（20241783577646 · 高三1班）"
+              - option "张三（20241783596508 · 高三1班）"
+              - option "张三（20241783596522 · 高三1班）"
+              - option "张三（20241783596738 · 高三1班）"
+              - option "张三（20241783596781 · 高三1班）"
+              - option "张三（20241783601498 · 高三1班）"
+              - option "张三（20241783602417 · 高三1班）"
+              - option "张三（20241783602462 · 高三1班）"
+              - option "测试学生（202619192383 · 高三1班）"
+              - option "修改后姓名（202619411013 · 高三1班）"
+              - option "测试学生（202643950981 · 高三1班）"
+              - option "修改后姓名（202644173822 · 高三1班）"
+              - option "测试学生（202683405457 · 高三1班）"
+              - option "修改后姓名（202683985696 · 高三1班）"
+              - option "张三（22 · 高三2班）"
+              - option "张三（A001 · 高三1班）"
+              - option "李四（A002 · 高三2班）"
+              - option "自动化测试学生（AUTOEAF7B0 · 高三1班）"
+              - option "新学生（NEW3674 · 高三1班）"
+              - option "新学生（NEW4256 · 高三1班）"
+              - option "新学生（NEW9247 · 高三1班）"
+              - option "测试改名（S001 · 高三1班）"
+              - option "李四（S002 · 高三1班）"
+              - option "王五（S003 · 高三1班）"
+              - option "赵六（S004 · 高三2班）"
+              - option "钱七（S005 · 高三2班）"
+              - option "孙八（S006 · 高三2班）"
+              - option "周九（S007 · 高三3班）"
+              - option "吴十（S008 · 高三3班）"
+              - option "郑十一（S009 · 高三3班）"
+              - option "冯十二（S010 · 高三3班）"
+              - option "测试学生（S5555 · 高三1班）"
+              - option "测试学生（S5556 · 高三1班）"
+              - option "测试学生（S6666 · 高三1班）"
+              - option "测试学生（S7777 · 高三1班）"
+              - option "测试学生（S8888 · 高三1班）"
+              - option "测试学生（S9999 · 高三1班）"
+              - option "张三_1783583833423（STU1783583833423 · 高三1班）"
+              - option "张三_1783583860946（STU1783583860946 · 高三1班）"
+              - option "张三_1783584075287（STU1783584075287 · 高三1班）"
+              - option "自动化学生（STU1783597264 · 高三1班）"
+              - option "自动化学生（STU1783597503 · 高三1班）"
+              - option "学生_STU1783603753（STU1783603753 · 高三1班）"
+              - option "学生_STU1783603985（STU1783603985 · 高三1班）"
+              - option "学生_STU1783604083（STU1783604083 · 高三1班）"
+              - option "学生_STU1783604134（STU1783604134 · 高三1班）"
+              - option "学生_STU1783604182（STU1783604182 · 高三1班）"
+              - option "学生_STU1783604359（STU1783604359 · 高三1班）"
+              - option "学生_STU1783604470（STU1783604470 · 高三1班）"
+              - option "学生_STU1783604681（STU1783604681 · 高三1班）"
+              - option "学生_STU1783604765（STU1783604765 · 高三1班）"
+              - option "学生_STU1783604874（STU1783604874 · 高三1班）"
+              - option "学生_STU1783606013666071（STU1783606013666071 · 高三1班）"
+              - option "学生_STU1783606431741375（STU1783606431741375 · 高三1班）"
+              - option "学生_STU1783666942577763（STU1783666942577763 · 高三1班）"
+              - option "学生_STU1783666957120393（STU1783666957120393 · 高三1班）"
+              - option "学生_STU1783668310213391（STU1783668310213391 · 高三1班）"
+              - option "学生_STU1783682040842752（STU1783682040842752 · 高三1班）"
+              - option "学生_STU1783682041977259（STU1783682041977259 · 高三1班）"
+              - option "学生_STU1783689746129446（STU1783689746129446 · 高三1班）"
+              - option "学生_STU1783689866088434（STU1783689866088434 · 高三1班）"
+              - option "学生_STU1783689973206927（STU1783689973206927 · 高三1班）"
+              - option "学生_STU1783689996081020（STU1783689996081020 · 高三1班）"
+              - option "学生_STU1783690183772808（STU1783690183772808 · 高三1班）"
+              - option "学生_STU1783694788021506（STU1783694788021506 · 高三1班）"
+              - option "学生_STU1783751364204979（STU1783751364204979 · 高三1班）"
+              - option "学生_STU1784035768263904（STU1784035768263904 · 高三1班）"
+              - option "学生_STU1784036119461880（STU1784036119461880 · 高三1班）"
+              - option "学生_STU1784036136869354（STU1784036136869354 · 高三1班）"
+              - option "学生_STU1784036152800633（STU1784036152800633 · 高三1班）"
+              - option "学生_STU1784036174588240（STU1784036174588240 · 高三1班）"
+              - option "学生_STU1784036347513424（STU1784036347513424 · 高三1班）"
+              - option "学生_STU1784036366978120（STU1784036366978120 · 高三1班）"
+              - option "学生_STU1784036537919605（STU1784036537919605 · 高三1班）"
+              - option "学生_STU1784037814641914（STU1784037814641914 · 高三1班）"
+              - option "学生_STU1784037891341628（STU1784037891341628 · 高三1班）"
+              - option "学生_STU1784039779626869（STU1784039779626869 · 高三1班）"
+              - option "测试学生（STU1785137952841 · 高三1班）"
+              - option "测试学生（STU1785137959178 · 高三1班）"
+              - option "（STU1785137981511 · 高三1班）"
+              - option "测试学生（STU1785137990331 · 高三1班）"
+              - option "测试学生（STU1785137995443 · 高三1班）"
+              - option "（STU1785143043215 · 高三1班）"
+              - option "测试学生（STU1785143052265 · 高三1班）"
+              - option "测试学生（STU1785143056757 · 高三1班）"
+              - option "测试学生（STU46782 · 高三1班）"
+              - option "流程学生_已修改（STU_FLOW_1783597506 · 高三2班）"
+              - option "查询测试学生（STU_QRY_1783597505 · 高三1班）"
+              - option "修改后姓名_1783597505（STU_UPD_1783597505 · 高三2班）"
+              - option "Test Student（T001 · 高三1班）"
+              - option "Test Student 2（T002 · 高三1班）"
+              - option "测试学生（T10595 · 高三1班）"
+              - option "成绩测试学生（T11434 · 高三1班）"
+              - option "自动化学生（T1234 · 高三1班）"
+              - option "成绩测试学生（T13950 · 高三1班）"
+              - option "查询测试（T14798 · 高三1班）"
+              - option "新名字（T14923 · 高三1班）"
+              - option "测试学生（T15439 · 高三1班）"
+              - option "新名字（T15886 · 高三1班）"
+              - option "测试学生（T18728 · 高三1班）"
+              - option "查询成绩学生（T23894 · 高三1班）"
+              - option "新名字（T25086 · 高三1班）"
+              - option "测试学生（T26806 · 高三1班）"
+              - option "查询成绩学生（T26863 · 高三1班）"
+              - option "查询成绩学生（T27832 · 高三1班）"
+              - option "新名字（T27877 · 高三1班）"
+              - option "新名字（T29430 · 高三1班）"
+              - option "成绩测试学生（T29577 · 高三1班）"
+              - option "测试学生（T34457 · 高三1班）"
+              - option "查询成绩学生（T34978 · 高三1班）"
+              - option "查询成绩学生（T36906 · 高三1班）"
+              - option "成绩测试学生（T38113 · 高三1班）"
+              - option "成绩测试学生（T40944 · 高三1班）"
+              - option "查询成绩学生（T41214 · 高三1班）"
+              - option "新名字（T41337 · 高三1班）"
+              - option "新名字（T44416 · 高三1班）"
+              - option "成绩测试学生（T44542 · 高三1班）"
+              - option "学生_T44550（T44550 · 高三1班）"
+              - option "测试学生（T46649 · 高三1班）"
+              - option "学生_T48138（T48138 · 高三1班）"
+              - option "新名字（T48335 · 高三1班）"
+              - option "成绩测试学生（T48879 · 高三1班）"
+              - option "查询测试（T48921 · 高三1班）"
+              - option "学生_T50014（T50014 · 高三1班）"
+              - option "查询成绩学生（T52295 · 高三1班）"
+              - option "测试学生（T52873 · 高三1班）"
+              - option "成绩测试学生（T55452 · 高三1班）"
+              - option "学生_T56141（T56141 · 高三1班）"
+              - option "新名字（T58429 · 高三1班）"
+              - option "成绩测试学生（T58682 · 高三1班）"
+              - option "测试学生（T59753 · 高三1班）"
+              - option "查询测试（T60218 · 高三1班）"
+              - option "成绩测试学生（T60235 · 高三1班）"
+              - option "查询测试（T61751 · 高三1班）"
+              - option "测试学生（T62852 · 高三1班）"
+              - option "查询测试（T63349 · 高三1班）"
+              - option "学生_T64062（T64062 · 高三1班）"
+              - option "测试学生（T66101 · 高三1班）"
+              - option "测试学生（T66242 · 高三1班）"
+              - option "查询成绩学生（T68687 · 高三1班）"
+              - option "测试学生（T70318 · 高三1班）"
+              - option "新名字（T72713 · 高三1班）"
+              - option "查询测试（T72848 · 高三1班）"
+              - option "查询成绩学生（T74553 · 高三1班）"
+              - option "查询测试（T78229 · 高三1班）"
+              - option "测试学生（T79291 · 高三1班）"
+              - option "新名字（T80128 · 高三1班）"
+              - option "新名字（T80699 · 高三1班）"
+              - option "查询测试（T83084 · 高三1班）"
+              - option "查询测试（T83462 · 高三1班）"
+              - option "查询成绩学生（T84779 · 高三1班）"
+              - option "查询测试（T85791 · 高三1班）"
+              - option "查询成绩学生（T88708 · 高三1班）"
+              - option "测试学生（T8888 · 高三1班）"
+              - option "成绩测试学生（T89541 · 高三1班）"
+              - option "查询测试（T89943 · 高三1班）"
+              - option "成绩测试学生（T95012 · 高三1班）"
+              - option "成绩测试学生（T96194 · 高三1班）"
+              - option "查询成绩学生（T97490 · 高三1班）"
+              - option "查询测试（T97822 · 高三1班）"
+              - option "新名字（T97976 · 高三1班）"
+              - option "查询测试（T98232 · 高三1班）"
+              - option "查询成绩学生（T99332 · 高三1班）"
+              - option "测试（T9999 · 高三1班）"
+              - option "流程测试学生（TEST001 · 高三1班）"
+              - option "测试学生（TEST002 · 高三1班）"
+              - option "测试学生（TEST003 · 高三1班）"
+              - option "头像测试学生（TEST0A52 · 高三1班）"
+              - option "流程测试学生（TEST1782920276 · 高三1班）"
+              - option "流程测试学生（TEST1782920333 · 高三1班）"
+              - option "测试学生（TEST1785159529 · 高三1班）"
+              - option "测试学生（TEST1785159573 · 高三1班）"
+              - option "学生_男（TEST1785159577_男 · 高三1班）"
+              - option "学生_女（TEST1785159579_女 · 高三1班）"
+              - option "学生_未知（TEST1785159582_未知 · 高三1班）"
+              - option "学生_在读（TEST1785159584_在读 · 高三1班）"
+              - option "学生_毕业（TEST1785159586_毕业 · 高三1班）"
+              - option "学生_休学（TEST1785159588_休学 · 高三1班）"
+              - option "学生_退学（TEST1785159590_退学 · 高三1班）"
+              - option "测试学生（TEST1785159613 · 高三1班）"
+          - generic [ref=e223]:
+            - generic [ref=e224]: 请假类型
+            - combobox [ref=e225]:
+              - option "事假" [selected]
+              - option "病假"
+              - option "其他"
+          - generic [ref=e226]:
+            - generic [ref=e227]:
+              - generic [ref=e228]: 开始日期
+              - textbox [ref=e229]: 2026-08-18
+            - generic [ref=e230]:
+              - generic [ref=e231]: 结束日期
+              - textbox [ref=e232]: 2026-08-18
+          - generic [ref=e233]:
+            - generic [ref=e234]: 请假原因
+            - textbox [ref=e235]
+          - generic [ref=e236]:
+            - button "取消" [ref=e237] [cursor=pointer]
+            - button "提交" [ref=e238] [cursor=pointer]

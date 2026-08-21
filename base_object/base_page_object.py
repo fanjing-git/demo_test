@@ -9,11 +9,12 @@ from loguru import logger
 from playwright.sync_api import Page
 
 from common.ui_assertions import UIAssertions
+from config.env_config import DEFAULT_TIMEOUT
 
 
 class BasePage(UIAssertions):
     def __init__(self, page: Page):
-        super().__init__(page=page, timeout=10)
+        super().__init__(page=page, timeout=DEFAULT_TIMEOUT)
         logger.info("初始化BasePage类")
         self.page.set_default_timeout(self.timeout * 1000)
         self.page.set_default_navigation_timeout(self.timeout * 1000)
@@ -133,3 +134,18 @@ class BasePage(UIAssertions):
         except Exception:
             pass
         return file_path
+
+    # 封装原生弹窗点击确认的方法
+    def handle_dialog(self,accept: bool = True):
+        """
+       注册一次性弹窗处理器，用于处理点击后触发的浏览器原生 confirm/alert 弹窗
+       :param accept: True=点确定(accept)，False=点取消(dismiss)
+       :注意: 必须在触发弹窗的点击动作之前调用，因为这是"预先注册下一次弹窗怎么处理"，
+             弹窗是浏览器原生UI，不在页面DOM里，无法用 locator 找到"确定/取消"按钮
+       """
+        if accept:
+            self.page.once("dialog",lambda djalog: djalog.accept())
+            logger.info("已注册弹窗处理：下一次弹窗将自动点击确认")
+        else:
+            self.page.once("dialog" , lambda  dialog: dialog.dismiss())
+            logger.info("已注册弹窗处理：下一次弹窗将自动点击取消")

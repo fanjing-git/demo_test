@@ -1,0 +1,119 @@
+- generic [ref=e28]:
+  - complementary [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]: E
+      - generic [ref=e32]: EduScore
+    - navigation [ref=e33]:
+      - link "📊 工作台" [ref=e34] [cursor=pointer]:
+        - /url: /dashboard
+        - generic [ref=e35]: 📊
+        - generic [ref=e36]: 工作台
+      - link "🌴 请假申请" [ref=e37] [cursor=pointer]:
+        - /url: /leave
+        - generic [ref=e38]: 🌴
+        - generic [ref=e39]: 请假申请
+      - link "📢 校园公告" [ref=e40] [cursor=pointer]:
+        - /url: /announcements
+        - generic [ref=e41]: 📢
+        - generic [ref=e42]: 校园公告
+      - link "🔍 操作审计" [ref=e43] [cursor=pointer]:
+        - /url: /audit
+        - generic [ref=e44]: 🔍
+        - generic [ref=e45]: 操作审计
+      - link "📚 学科管理" [ref=e46] [cursor=pointer]:
+        - /url: /subjects
+        - generic [ref=e47]: 📚
+        - generic [ref=e48]: 学科管理
+      - link "👨‍🎓 学生管理" [ref=e49] [cursor=pointer]:
+        - /url: /students
+        - generic [ref=e50]: 👨‍🎓
+        - generic [ref=e51]: 学生管理
+      - link "🏫 班级管理" [ref=e52] [cursor=pointer]:
+        - /url: /classes
+        - generic [ref=e53]: 🏫
+        - generic [ref=e54]: 班级管理
+      - link "📋 考试管理" [ref=e55] [cursor=pointer]:
+        - /url: /exams
+        - generic [ref=e56]: 📋
+        - generic [ref=e57]: 考试管理
+      - link "📝 成绩管理" [ref=e58] [cursor=pointer]:
+        - /url: /scores
+        - generic [ref=e59]: 📝
+        - generic [ref=e60]: 成绩管理
+      - link "🔬 考试分析" [ref=e61] [cursor=pointer]:
+        - /url: /analysis/exam
+        - generic [ref=e62]: 🔬
+        - generic [ref=e63]: 考试分析
+      - link "⏰ 考勤管理" [ref=e64] [cursor=pointer]:
+        - /url: /attendance
+        - generic [ref=e65]: ⏰
+        - generic [ref=e66]: 考勤管理
+      - link "📈 考勤统计" [ref=e67] [cursor=pointer]:
+        - /url: /attendance/stats
+        - generic [ref=e68]: 📈
+        - generic [ref=e69]: 考勤统计
+      - link "📤 导入导出" [ref=e70] [cursor=pointer]:
+        - /url: /upload-download
+        - generic [ref=e71]: 📤
+        - generic [ref=e72]: 导入导出
+    - generic [ref=e73]:
+      - generic "点击更换头像" [ref=e74] [cursor=pointer]: 系
+      - generic [ref=e76]: 系统管理员
+      - generic [ref=e77]: 系统管理员
+      - button "退出登录" [ref=e78] [cursor=pointer]
+  - main [ref=e79]:
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - heading "工作台" [level=2] [ref=e82]
+        - generic [ref=e83]:
+          - textbox "日期筛选" [ref=e84]
+          - combobox [ref=e85]:
+            - option "全部考试" [selected]
+            - option "2025-2026学年第一学期期中考试"
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - generic [ref=e88]: 学生总数
+          - generic [ref=e89]: "29"
+        - generic [ref=e90]:
+          - generic [ref=e91]: 启用学科
+          - generic [ref=e92]: "31"
+        - generic [ref=e93]:
+          - generic [ref=e94]: 平均分
+          - generic [ref=e95]: "84.82"
+        - generic [ref=e96]:
+          - generic [ref=e97]: 及格率
+          - generic [ref=e98]: 93.1%
+      - generic [ref=e99]:
+        - heading "学科平均分" [level=3] [ref=e100]
+        - generic [ref=e101]:
+          - generic [ref=e102]: MATH
+          - generic [ref=e105]: "73.1"
+        - generic [ref=e106]:
+          - generic [ref=e107]: ENG
+          - generic [ref=e110]: "73.37"
+        - generic [ref=e111]:
+          - generic [ref=e112]: CHN
+          - generic [ref=e115]: "84.46"
+        - generic [ref=e116]:
+          - generic [ref=e117]: SUB1783682040982263
+          - generic [ref=e120]: "91"
+        - generic [ref=e121]:
+          - generic [ref=e122]: SUB1783682042604985
+          - generic [ref=e125]: "85"
+      - generic [ref=e126]:
+        - heading "等级分布" [level=3] [ref=e127]
+        - generic [ref=e128]:
+          - generic [ref=e129]: A
+          - generic [ref=e132]: 11人
+        - generic [ref=e133]:
+          - generic [ref=e134]: B
+          - generic [ref=e137]: 13人
+        - generic [ref=e138]:
+          - generic [ref=e139]: C
+          - generic [ref=e142]: 2人
+        - generic [ref=e143]:
+          - generic [ref=e144]: D
+          - generic [ref=e147]: 1人
+        - generic [ref=e148]:
+          - generic [ref=e149]: F
+          - generic [ref=e152]: 2人
