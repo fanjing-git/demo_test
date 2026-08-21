@@ -46,8 +46,7 @@ class TestCreateNewLeaveApplication:
     def test_create_new_leave_application_cancel(self, logged_in_page):
         """创建请假申请后取消"""
         self._init_page(logged_in_page)
-        self.create_new_leave_page = CreateNewLeaveRequestPage(logged_in_page)
-        self.leave_request_page = LeaveRequestPage(logged_in_page)
+        self.leave_request_page.enter_leave_request_page()
         leave_request_data = LeaveRequestData(
             student_no="2024001",
             leave_type="病假",
@@ -57,6 +56,7 @@ class TestCreateNewLeaveApplication:
         )
         self.create_new_leave_page.create_new_leave_request(leave_request_data)
         self.create_new_leave_page.click_cancel_button()
+        self.create_new_leave_page.assert_url_contains("/leave")
 
 
 if __name__ == '__main__':

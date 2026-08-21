@@ -20,10 +20,10 @@ class CreateNewLeaveApplicationLocator:
     END_TIME_INPUT = "//label[text()='结束日期']/following-sibling::input"
     # 请假原因输入框的元素定位
     LEAVE_REASON_INPUT = "//*[@class ='form-group']//textarea"
-    # 提交按钮的元素定位
-    SUBMIT_BUTTON = "//*[text() ='提交']"
-    # 取消按钮的元素定位
-    CANCEL_BUTTON = "//*[text() ='取消']"
+    # 提交按钮的元素定位（限定 button 标签，避免匹配到其他“提交”文本）
+    SUBMIT_BUTTON = "//button[text() ='提交']"
+    # 取消按钮的元素定位（限定 button 标签）
+    CANCEL_BUTTON = "//button[text() ='取消']"
     # 提交后的文本信息
     SUBMIT_TEXT = "//*[text() ='请假申请已提交']"
     

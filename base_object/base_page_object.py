@@ -85,6 +85,14 @@ class BasePage(UIAssertions):
         logger.info(f"获取元素文本：{locator}")
         return self.find_element(locator).text_content()
 
+    def is_element_displayed(self, locator, timeout=3):
+        logger.info(f"判断元素是否可见：{locator}")
+        try:
+            self.page.locator(locator).wait_for(state='visible', timeout=timeout * 1000)
+            return True
+        except Exception:
+            return False
+
     # 封装切换新窗口/标签页的方法（基于 Playwright expect_popup）
     def switch_to_new_window(self, locator):
         logger.info(f"点击元素并等待新窗口：{locator}")
@@ -136,7 +144,7 @@ class BasePage(UIAssertions):
         return file_path
 
     # 封装原生弹窗点击确认的方法
-    def handle_dialog(self,accept: bool = True):
+    def handle_dialog(self, accept: bool = True):
         """
        注册一次性弹窗处理器，用于处理点击后触发的浏览器原生 confirm/alert 弹窗
        :param accept: True=点确定(accept)，False=点取消(dismiss)
@@ -144,8 +152,60 @@ class BasePage(UIAssertions):
              弹窗是浏览器原生UI，不在页面DOM里，无法用 locator 找到"确定/取消"按钮
        """
         if accept:
-            self.page.once("dialog",lambda djalog: djalog.accept())
+            self.page.once("dialog", lambda dialog: dialog.accept())
             logger.info("已注册弹窗处理：下一次弹窗将自动点击确认")
         else:
-            self.page.once("dialog" , lambda  dialog: dialog.dismiss())
+            self.page.once("dialog", lambda dialog: dialog.dismiss())
             logger.info("已注册弹窗处理：下一次弹窗将自动点击取消")
+
+    def handle_multi_dialog(self, confirm_accept: bool = True, prompt_text: str = ""):
+        """
+        注册弹窗处理器，处理连续多个原生弹窗（如 confirm + prompt）
+        用 page.on() 注册持久监听，返回 handler 供调用方在操作完成后 remove_listener
+        :param confirm_accept: confirm 弹窗是否点确定
+        :param prompt_text: prompt 弹窗填入的文本
+        :return: handler 函数，操作完成后需调用 self.page.remove_listener("dialog", handler) 移除
+        """
+        dialog_count = [0]
+
+        def on_dialog(dialog):
+            dialog_count[0] += 1
+            if dialog.type == "confirm":
+                if confirm_accept:
+                    dialog.accept()
+                    logger.info(f"第{dialog_count[0]}个弹窗(confirm)：已点击确认")
+                else:
+                    dialog.dismiss()
+                    logger.info(f"第{dialog_count[0]}个弹窗(confirm)：已点击取消")
+            elif dialog.type == "prompt":
+                dialog.accept(prompt_text)
+                logger.info(f"第{dialog_count[0]}个弹窗(prompt)：已填入文本[{prompt_text}]")
+            else:
+                dialog.accept()
+                logger.info(f"第{dialog_count[0]}个弹窗({dialog.type})：已自动确认")
+
+        self.page.on("dialog", on_dialog)
+        return on_dialog
+
+    def get_toast_text(self, selector=None, timeout=3):
+        """
+        获取瞬态提示文本（如右上角弹出的"已通过"、"操作成功"等）
+        这类提示通常只存在 1~2 秒就消失，用 JS 立即获取，避免 sequential wait 导致提示消失
+        :param selector: 提示元素的 CSS 选择器，根据实际页面 DOM 传入（如 div.toast、.el-message--success 等）
+        :param timeout: 轮询等待时间（秒），默认 3 秒
+        :return: 提示文本内容
+        """
+        if not selector:
+            raise ValueError("selector 不能为空，请传入提示元素的 CSS 选择器")
+        import time
+        end_time = time.time() + timeout
+        while time.time() < end_time:
+            toast_text = self.page.evaluate(f"""() => {{
+                const el = document.querySelector('{selector}');
+                return el ? el.textContent.trim() : null;
+            }}""")
+            if toast_text:
+                logger.info(f"获取到 toast 提示：{toast_text}")
+                return toast_text
+            time.sleep(0.2)
+        raise AssertionError(f"在 {timeout} 秒内未找到 toast 提示（选择器：{selector}）")
